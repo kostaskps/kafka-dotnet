@@ -13,7 +13,7 @@ namespace kafka_consumer
         {
             var config = new ConsumerConfig
             {
-                BootstrapServers = "kafka-1:19092",
+                BootstrapServers = Environment.GetEnvironmentVariable("KAFKA_CONNECTION"),// "kafka-1:19092",
                 AutoOffsetReset = AutoOffsetReset.Earliest,
                 ClientId = "my-app",
                 GroupId = "my-group",
