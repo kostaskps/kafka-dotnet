@@ -13,7 +13,7 @@ namespace kafka_consumer
         {
             var config = new ConsumerConfig
             {
-                BootstrapServers = "localhost:9092",
+                BootstrapServers = "kafka-1:19092",
                 AutoOffsetReset = AutoOffsetReset.Earliest,
                 ClientId = "my-app",
                 GroupId = "my-group",
