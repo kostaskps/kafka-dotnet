@@ -5,10 +5,9 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["kafka-consumer/kafka-consumer.csproj", "kafka-consumer/"]
-RUN dotnet restore "kafka-consumer/kafka-consumer.csproj"
+COPY kafka-consumer.csproj .
+RUN dotnet restore
 COPY . .
-WORKDIR "/src/kafka-consumer"
 RUN dotnet build "kafka-consumer.csproj" -c Release -o /app/build
 
 FROM build AS publish
